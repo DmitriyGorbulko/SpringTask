@@ -12,19 +12,16 @@ public class UserController {
 
     private final UserService userService;
 
-    // Конструктор для внедрения UserService
     public UserController(UserService userService) {
         this.userService = userService;
     }
 
-    // Создание пользователя
     @PostMapping
     public ResponseEntity<UserPostResponse> createUser(@RequestBody UserPostRequest request) {
         UserPostResponse response = userService.createUser(request);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    // Обновление email пользователя по id
     @PutMapping("/{id}/email")
     public ResponseEntity<UserUpdateResponse> updateUserEmail(
             @PathVariable Long id,
@@ -33,7 +30,6 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
 
-    // Получение пользователя по email (через параметр запроса)
     @GetMapping
     public ResponseEntity<UserGetResponse> getUserByEmail(@RequestParam String email) {
         UserGetRequest request = new UserGetRequest();
@@ -42,12 +38,25 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
 
-    // Удаление пользователя по id
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         UserDeleteRequest request = new UserDeleteRequest();
         request.setId(id);
         userService.deleteUser(request);
         return ResponseEntity.noContent().build();
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<String> handleRuntimeException(RuntimeException ex) {
+        String message = ex.getMessage();
+
+        if (message != null && message.contains("not found")) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
+        }
+        if (message != null && message.contains("already exists")) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(message);
+        }
+
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(message);
     }
 }
