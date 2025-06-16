@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2f70831a-21c8-4370-aec3-bf9a319ac754" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/notificationservice/src/main/java/com/example/notificationservice/config/MailConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notificationservice/src/main/java/com/example/notificationservice/controller/NotificationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notificationservice/src/main/java/com/example/notificationservice/dto/UserEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notificationservice/src/main/java/com/example/notificationservice/kafka/UserEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notificationservice/src/main/java/com/example/notificationservice/service/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/main/java/com/example/demo/controllers/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/main/java/com/example/demo/dto/UserDeleteRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/main/java/com/example/demo/dto/UserGetRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/main/java/com/example/demo/dto/UserGetResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/main/java/com/example/demo/dto/UserPostRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/main/java/com/example/demo/dto/UserPostResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/main/java/com/example/demo/dto/UserUpdateRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/main/java/com/example/demo/dto/UserUpdateResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/main/java/com/example/demo/entities/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/main/java/com/example/demo/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/main/java/com/example/demo/repositories/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/main/java/com/example/demo/services/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/test/java/com/example/demo/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/spring/src/test/java/com/example/demo/controllers/UserControllerTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2yYhIBRrLc2XFJo0diViB2FYlpJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/source/Java/SpringTask/SpringTask"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2f70831a-21c8-4370-aec3-bf9a319ac754" name="Changes" comment="" />
+      <created>1750017334765</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750017334765</updated>
+    </task>
+    <servers />
+  </component>
+</project>

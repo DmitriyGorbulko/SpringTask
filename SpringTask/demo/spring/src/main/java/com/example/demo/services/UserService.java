@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.config.KafkaProducerService;
 import com.example.demo.dto.*;
 import com.example.demo.entities.User;
 import com.example.demo.mapper.UserMapper;
@@ -12,15 +13,19 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final KafkaProducerService kafkaProducerService;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, KafkaProducerService kafkaProducerService) {
         this.userRepository = userRepository;
+        this.kafkaProducerService = kafkaProducerService;
     }
 
     public UserPostResponse createUser(UserPostRequest request) {
+
         User user = UserMapper.toEntity(request);
-        User savedUser = userRepository.save(user);
-        return UserMapper.toCreateResponse(savedUser);
+        User saved = userRepository.save(user);
+        kafkaProducerService.sendUserEvent(new UserEvent(saved.getEmail(), "CREATE"));
+        return UserMapper.toCreateResponse(saved);
     }
 
     public UserUpdateResponse updateUserEmail(Long id, UserUpdateRequest request) {
@@ -42,11 +47,10 @@ public class UserService {
         return UserMapper.toGetResponse(optionalUser.get());
     }
 
-    public void deleteUser(UserDeleteRequest request) {
-        Long id = UserMapper.toId(request);
-        if (!userRepository.existsById(id)) {
-            throw new RuntimeException("User not found with id: " + id);
-        }
-        userRepository.deleteById(id);
+    public void deleteUser(Long id) {
+        userRepository.findById(id).ifPresent(user -> {
+            userRepository.deleteById(id);
+            kafkaProducerService.sendUserEvent(new UserEvent(user.getEmail(), "DELETE"));
+        });
     }
 }

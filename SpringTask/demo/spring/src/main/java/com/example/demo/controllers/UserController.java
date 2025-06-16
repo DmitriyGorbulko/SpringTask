@@ -42,7 +42,7 @@ public class UserController {
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         UserDeleteRequest request = new UserDeleteRequest();
         request.setId(id);
-        userService.deleteUser(request);
+        userService.deleteUser(request.getId());
         return ResponseEntity.noContent().build();
     }
 
